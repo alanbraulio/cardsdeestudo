@@ -1,0 +1,50 @@
+.rectangularCard{
+  width:20em;
+  height: auto;
+  padding:1em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  margin: 1em;
+  border-radius: 0.5em;
+}
+
+.portraitCard{
+  min-width: 15em;
+  height: 16em;
+  padding:1em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  margin: 1em;
+  border-radius: 0.5em;
+}
+
+.circleCard{
+  width:15em;
+  height: 15em;
+  border-radius: 100%;
+  padding:1em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.75);
+  margin: 1em;
+}
+
+
+.editCard{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}

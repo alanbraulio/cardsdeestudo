@@ -1,0 +1,76 @@
+.content{
+  width: 20em;
+  height: 40em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+  background-color:#fff;
+  position: absolute;
+  left: 0;
+  top: 2em;
+}
+.content > p{
+  font-weight: bold;
+}
+
+.option{
+  width: 8em;
+  height: 8em;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-top:1em;
+  -webkit-box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
+  box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
+  z-index: 100;
+}
+.optionSelected{
+  width: 8em;
+  height: 8em;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-top:1em;
+  border: 2px solid #f70000;
+  -webkit-box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
+  box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
+}
+
+.figureRectangular{
+  width: 2em;
+  height: 1em;
+  border-radius: 0.2em;
+  border: 1px solid #000;
+  background-color: #fff;
+  margin:1em 0;
+}
+
+.figurePortrait{
+  width: 1.5em;
+  height: 2.5em;
+  border-radius: 0.2em;
+  border: 1px solid #000;
+  background-color: #fff;
+  margin:1em 0;
+}
+
+.figureCircle {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #000;
+  position: relative;
+  border-radius: 100%;
+}
