@@ -54,6 +54,15 @@ a {
   position: relative;
 }
 
+.sectionPopup{
+  background-color: #000;
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  padding-top: 2em;
+  position: relative;
+}
+
 .container {
   max-width: 50rem;
   padding: 0 1rem;
@@ -89,9 +98,21 @@ a {
   animation: animeLeft 0.3s forwards;
 }
 
+.rotate{
+  transform: initial;
+  animation: rotate 0.5s;
+}
+
 @keyframes animeLeft {
   to {
     opacity: 1;
     transform: initial;
   }
 }
+
+@keyframes rotate {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+

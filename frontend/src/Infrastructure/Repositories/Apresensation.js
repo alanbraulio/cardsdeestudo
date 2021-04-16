@@ -36,12 +36,13 @@ export const repoCreateApresentation = (apresentationInfos) => {
 export const repoUpdateApresentation = (apresensationId, dataApresentation) => {
   return new Promise((resolve) => {
     let response = null;
-    api.patch(`/cardsstudy/v1/presentations/${apresensationId}`, dataApresentation)
+    api.put(`/cardsstudy/v1/presentations/${apresensationId}`, dataApresentation)
     .then(async res => {
+      console.log(res, 'resposta da api dentro do redux')
       resolve(res.data)    
       return res.data;
     }).catch((error) => {
-      response = error.response.data;
+      response = error;
     }).finally (() => {
       resolve(response);
       return response;
