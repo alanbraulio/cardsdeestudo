@@ -60,3 +60,19 @@
   justify-content: center;
   align-items: center;
 }
+
+@media(max-width:767px){
+  .rectangularCard{
+    width: 10em;
+  }
+
+  .portraitCard{
+    width: 6em;
+    height: 7em;
+  }
+
+  .circleCard{
+    width: 10em;
+    height: 10em;
+  }
+}

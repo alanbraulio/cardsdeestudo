@@ -29,7 +29,7 @@
   -webkit-box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
   -moz-box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
   box-shadow: -1px -1px 24px -8px rgba(0,0,0,0.75);
-  z-index: 100;
+  z-index: 9999;
 }
 .optionSelected{
   width: 8em;
@@ -73,4 +73,15 @@
   border: 1px solid #000;
   position: relative;
   border-radius: 100%;
+}
+
+@media(max-width:767px){
+  .content{
+    top: 0;
+    width: 100vw;
+  }
+  .sideBar{
+    position: relative;
+    z-index: 1000;
+  }
 }

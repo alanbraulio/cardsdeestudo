@@ -55,7 +55,7 @@ function Home() {
       return state.allApresentations.map((apresentation, index) => {
         if (index === screen) {
           return (
-            <div style={{ position: "relative" }}>
+            <div className={styles.content}>
               {renderActionButtons(apresentation.id)}
               <div className={styles.apresentation}>
                 {apresentation.name}

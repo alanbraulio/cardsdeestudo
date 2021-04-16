@@ -8,7 +8,7 @@ import { Store } from "../../Infrastructure/Store/Store";
 import {
   doGetAllApresentations,
   doCreateApresentation,
-  doUpdateApresensation
+  doUpdateApresensation,
 } from "../../Infrastructure/Actions/Apresentation";
 
 function Sidebar(props) {
@@ -17,7 +17,7 @@ function Sidebar(props) {
   const [screen, setScreen] = useState(1);
   const [question, setQuestion] = useState();
   const [answer, setAnswer] = useState();
-  const [newCards] = useState([]);
+  const [newCards, setNewCards] = useState([]);
 
   useEffect(() => {
     doGetAllApresentations(dispatch);
@@ -40,7 +40,7 @@ function Sidebar(props) {
   const createObjectCard = (obj) => {
     let allCards = Object.values(obj.descriptor.cards);
     return allCards.map((card) => {
-      newCards.push(card);
+      return newCards.push(card);
     });
   };
 
@@ -90,26 +90,39 @@ function Sidebar(props) {
     }
   };
 
-    const handleUpdateApresensation = async () => {
-      const dataApresentation = {
-        name: "Alan Braulio",
-        descriptor: {
-          cards: {
-            ...newCards,
-          },
-        },
-        };
-        try {
-          await doUpdateApresensation(dispatch, props.idApresentation, dataApresentation);
-          props.setShowSideBar({
-            showSideBar: false,
-          });
-          doGetAllApresentations(dispatch);
-        } catch (error) {
-          console.log(error);
-        }
+  const handleCloseSideBar = () => {
+    props.setShowSideBar({
+      showSideBar: false,
+    });
+    setTemplate("");
+    setAnswer("");
+    setQuestion("");
+    setNewCards([]);
+  };
 
+  const handleUpdateApresensation = async () => {
+    const dataApresentation = {
+      name: "Alan Braulio",
+      descriptor: {
+        cards: {
+          ...newCards,
+        },
+      },
     };
+    try {
+      await doUpdateApresensation(
+        dispatch,
+        props.idApresentation,
+        dataApresentation
+      );
+      props.setShowSideBar({
+        showSideBar: false,
+      });
+      doGetAllApresentations(dispatch);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const renderTypeCards = () => {
     return (
@@ -178,27 +191,42 @@ function Sidebar(props) {
         {screen === 2 ? (
           <>
             {renderInputsNewCards()}
-            <Button onClick={props.idApresentation ? handleUpdateCard : handleCreateCard}>Cadastrar Card</Button>
+            <Button
+              onClick={
+                props.idApresentation ? handleUpdateCard : handleCreateCard
+              }
+            >
+              Cadastrar Card
+            </Button>
           </>
         ) : (
           ""
-        )}{
-          screen === 3 ? (
-            <>
-              <Button onClick={() => setScreen(screen - 2)}>
-                Cadastrar novo Card
-              </Button>
-              <Button onClick={props.idApresentation ? handleUpdateApresensation : handleCreateApresensation}>
-                Salvar apresentação
-              </Button>
-            </>
-          ):
-          ''
-        }
+        )}
+        {screen === 3 ? (
+          <>
+            <Button onClick={() => setScreen(screen - 2)}>
+              Cadastrar novo Card
+            </Button>
+            <Button
+              onClick={
+                props.idApresentation
+                  ? handleUpdateApresensation
+                  : handleCreateApresensation
+              }
+            >
+              Salvar apresentação
+            </Button>
+          </>
+        ) : (
+          ""
+        )}
+        <Button onClick={() => handleCloseSideBar()}>Cancelar</Button>
       </div>
     );
   };
-  return <div className={'animeLeft'}>{renderSideBar()}</div>;
+  return (
+    <div className={`${styles.sideBar} 'animeLeft'`}>{renderSideBar()}</div>
+  );
 }
 
 export default Sidebar;
