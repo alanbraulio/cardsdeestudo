@@ -16,6 +16,7 @@
   - [Voltando para uma apresentação anterior](#voltando-apresentacao-anterior)
   - [Criando um novo Card de estudo em uma apresentação específica](#criar-novo-card)
   - [Alterando informações de um Card de estudo em uma apresentação específica](#alterando-card)
+  - [Iniciando apresentação](#iniciando-apresentacao)
 - [Licença](#licença)
 
 ## Início
@@ -64,6 +65,7 @@ git clone https://github.com/alanbraulio/cardsdeestudo.git
 
 ### Alterando informações de um Card de estudo em uma apresentação específica
   - Funcionalidade em desenvolvimento 
-
+### Iniciando apresentação
+  - O usuário deve escolher alguma apresentação específica utilizando os botões de navegação no canto direito e após escolher deve clicar em "Apresentar Cards". Clicando em Apresentar Cards os cards da apresentação escolhida serão mostrados na tela. Para visualizar a resposta do Card o usuário deve clicar em "Ver Resposta". Para finalizar a apresentação o usuário deve clicar em Fechar Apresentação.  
 ## Licença
  pasta raiz/licence.txt
