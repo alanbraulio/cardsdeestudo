@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+<h2 align="center">📊 Editor de Cards de Estudo</h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Conteúdo
 
-In the project directory, you can run:
+- [Conteúdo](#conteúdo)
+- [Início](#início)
+- [Stack](#stack)
+- [Executando localmente](#executando-localmente)
+  - [Cliente:](#cliente)
+- [Como usar ](#como-usar)
+  - [Inicio da Aplicação](#inicio-aplicacao)
+  - [Criando uma nova apresentação](#nova-apresentacao)
+  - [Navegando para uma nova apresentação](#navegando-nova-apresentacao)
+  - [Voltando para uma apresentação anterior](#voltando-apresentacao-anterior)
+  - [Criando um novo Card de estudo em uma apresentação específica](#criar-novo-card)
+  - [Alterando informações de um Card de estudo em uma apresentação específica](#alterando-card)
+- [Licença](#licença)
 
-### `npm start`
+## Início
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone o projeto localmente:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+git clone https://github.com/alanbraulio/cardsdeestudo.git
+```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Stack
 
-### `npm run build`
+- Gerenciador de pacotes padrão: [npm](https://www.npmjs.com/)
+- Front-end (Client): [Reactjs](https://pt-br.reactjs.org/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Executando localmente
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Cliente: 
+- diretório raiz
+  
+    `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    `npm start`
 
-### `npm run eject`
+## Como usar 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Inicio da Aplicação
+  - Ao iniciar a aplicação é exibida a primeira apresentação criada
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Criando uma nova apresentação
+  - O usuário deve clicar no canto direito em Criar nova Apresentação.
+  - Será exibida uma sidebar lateral para que o usuário escolha o modelo de Card que ele deseja (Retangularm, Retrato ou Círculo)
+  - Ao escolher o modelo o usuário deve digitar a pergunta e resposta do modelo escolhido e clicar para cadastrar as informações.
+  - Na tela seguinte o usuário deve escolher entre criar mais um card ou finalizar a apresentação salvando. 
+  - Se o usuário clicar em Criar novo Card ele será redirecionado para a primeira tela para escolher um novo modelo de Card.
+  - Se o usuário clicar em Salvar Apresentação a sidebar será fechada e a nova apresentação será criada.
+### Navegando para uma nova apresentação
+  - O usuário tem no menu no canto direito o botão "Próxima Apresentação" para que ele consiga avançar e visualizar as demais apresentações. Vale lembrar que se houver apenas uma apresentação cadastrada este botão não estará habilitado.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Voltando para uma apresentação anterior
+  - O usuário tem no menu no canto direito o botão "Apresentação anterior" para que ele consiga voltar e visualizar as apresentações anteriores. Vale lembrar que se houver apenas uma apresentação cadastrada este botão não estará habilitado.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Criando um novo Card de estudo em uma apresentação específica
+  - O usuário tem no menu no canto direito os botões de "Próxima Apresentação" e "Apresentação anterior". Utilizando esses botões o usuário deve navegar até a apresentação que deseja incluir um novo card. Ao escolher a apresentação o usuário possui no canto direito um botão escrito "Criar Card para a apresentação atual". O usuário deve clicar nesse botão e então será aberta a sidebar para escolher o modelo e cadastrar a pergunta e resposta do novo Card. Ele poderá repetir o processo de criação de cards ilimitadas vezes até que por fim clique no botão "Salvar Apresentação" dentro da sidebar.
 
-## Learn More
+### Alterando informações de um Card de estudo em uma apresentação específica
+  - Funcionalidade em desenvolvimento 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licença
+ pasta raiz/licence.txt

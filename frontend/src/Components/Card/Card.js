@@ -17,7 +17,7 @@ function Card(props) {
 
   const handleSalveCard = () => {
     setShowEditCard(false);
-    props.updateCards(props.card);
+    // props.updateCards(props.card);
   };
 
   const handleShowAnwser = () => {
@@ -25,7 +25,7 @@ function Card(props) {
   };
   const renderCard = () => {
     return (
-      <div className={showAnswer ? "rotate" : ""}>
+      <div className={showAnswer ?  'rotate' : ""}>
         <div
           className={
             template === 1
@@ -35,6 +35,7 @@ function Card(props) {
               : styles.circleCard
           }
         >
+        <div className={showAnswer ? `${styles.flex}` : ''}>
           {!showAnswer ? (
             <>
               <div className={styles.headerCard}>
@@ -73,6 +74,7 @@ function Card(props) {
             ""
           )}
           {showAnswer ? answer : ""}
+        </div>
         </div>
       </div>
     );

@@ -10,29 +10,25 @@ import Button from "../Forms/Button";
 
 function Home() {
   const { state, dispatch } = useContext(Store);
-  const [next, setNext] = useState(0);
+  const [screen, setScreen] = useState(0);
   const [showSidebar, setShowSideBar] = useState(false);
   const [idApresentation, setIdApresentation] = useState("");
   const [playCards, setPlayCards] = useState(false);
-  const [allCards, setAllCards] = useState([]);
 
   useEffect(() => {
     doGetAllApresentations(dispatch);
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   setAllCards(state.allApresentations);
-  // }, [state]);
 
   const handleClickNextApresentation = () => {
-    setNext(next + 1);
+    setScreen(screen + 1);
     setShowSideBar(false);
     setIdApresentation('');
     
   };
 
   const handleClickPreviousApresentation = () => {
-    setNext(next - 1);
+    setScreen(screen - 1);
     setShowSideBar(false);
     setIdApresentation('');
   };
@@ -42,34 +38,12 @@ function Home() {
     setShowSideBar(true);
   };
 
-  const handleblabla = (apresentation) => {
-    setAllCards(apresentation.descriptor.cards)
-  }
-
-  const updateCards = (cards) => {
-    console.log(allCards, 'allCards')
-    // let teste = allCards.map((apresentation, index) => {
-    //   if(index == cards.templateId){
-    //       cards
-    //       apresentation.descriptor.cards
-    //      )
-    //   }
-    // })
-    // console.log(teste, 'teste')
-    // // let teste = allCards;
-    // teste[cards.index] = cards;
-
-    // setAllCards(teste);
-    console.log(cards, 'card que eu to alterando')
-  }
-
   const renderCards = (obj) => {
     let cards = Object.values(obj.descriptor.cards);
     return cards.map((card, index) => {
-      card = {...card, index, templateId: obj.id}
+      card = {...card, index}
       return (
         <Card
-          updateCards={updateCards}
           card={card}
           playCards={playCards}
         />
@@ -79,10 +53,9 @@ function Home() {
   const renderApresentations = () => {
     if (state.allApresentations) {
       return state.allApresentations.map((apresentation, index) => {
-        if (index === next) {
+        if (index === screen) {
           return (
             <div style={{ position: "relative" }}>
-              {/* {handleblabla(apresentation)} */}
               {renderActionButtons(apresentation.id)}
               <div className={styles.apresentation}>
                 {apresentation.name}
@@ -113,11 +86,11 @@ function Home() {
   };
 
   const checkDisabledNextButton = () => {
-    if (state.allApresentations.length === next + 1 ? true : false) return true;
+    if (state.allApresentations.length === screen + 1 ? true : false) return true;
     else return;
   };
   const checkDisabledPreviouButton = () => {
-    if (next === 0) return true;
+    if (screen === 0) return true;
     else return;
   };
 
