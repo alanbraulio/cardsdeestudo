@@ -10,7 +10,6 @@ function Card(props) {
   const [question, setQuestion] = useState(props.card.question);
   const [answer] = useState(props.card.answer);
   const [template] = useState(props.card.template);
-  const [teste, setTeste]= useState(0);
 
   const handleShowEditCard = () => {
     setShowEditCard(true);
