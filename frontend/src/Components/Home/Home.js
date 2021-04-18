@@ -177,15 +177,17 @@ function Home() {
       )}
       {playCards && (
         <div className={styles.preview}>
-          {renderPlayApresentation()}
-          {
-            <Button
-              className={styles.closeApresentation}
-              onClick={() => setPlayCards(false)}
-            >
-              Fechar apresentação
-            </Button>
-          }
+          <div className={styles.contentPreview}>
+            {renderPlayApresentation()}
+            {
+              <Button
+                className={styles.closeApresentation}
+                onClick={() => setPlayCards(false)}
+              >
+                Fechar apresentação
+              </Button>
+            }
+          </div>
         </div>
       )}
       <div className={"container"}>{renderApresentations()}</div>
