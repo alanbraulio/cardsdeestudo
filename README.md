@@ -49,9 +49,9 @@ git clone https://github.com/alanbraulio/cardsdeestudo.git
 
 ### Criando uma nova apresentação
   - O usuário deve clicar no canto direito em Criar nova Apresentação.
-  - Será exibida uma sidebar lateral para que o usuário escolha o modelo de Card que ele deseja (Retangularm, Retrato ou Círculo)
-  - Ao escolher o modelo o usuário deve digitar a pergunta e resposta do modelo escolhido e clicar para cadastrar as informações.
-  - Na tela seguinte o usuário deve escolher entre criar mais um card ou finalizar a apresentação salvando. 
+  - Será exibida uma sidebar lateral para que o usuário escolha o modelo de Card que ele deseja (Retangular, Retrato ou Círculo)
+  - Ao escolher o modelo o usuário deve clicar para cadastrar as informações de pergunta e resposta do modelo escolhido. Após digitar as informações o usuário deve clicar para cadastrar o card.
+  - Na tela seguinte o usuário deve escolher entre criar mais um card ou finalizar a apresentação salvando. Obs: A qualquer momento o usuário pode cancelar o processo clicando em "Cancelar".
   - Se o usuário clicar em Criar novo Card ele será redirecionado para a primeira tela para escolher um novo modelo de Card.
   - Se o usuário clicar em Salvar Apresentação a sidebar será fechada e a nova apresentação será criada.
 ### Navegando para uma nova apresentação
@@ -64,8 +64,9 @@ git clone https://github.com/alanbraulio/cardsdeestudo.git
   - O usuário tem no menu no canto direito os botões de "Próxima Apresentação" e "Apresentação anterior". Utilizando esses botões o usuário deve navegar até a apresentação que deseja incluir um novo card. Ao escolher a apresentação o usuário possui no canto direito um botão escrito "Criar Card para a apresentação atual". O usuário deve clicar nesse botão e então será aberta a sidebar para escolher o modelo e cadastrar a pergunta e resposta do novo Card. Ele poderá repetir o processo de criação de cards ilimitadas vezes até que por fim clique no botão "Salvar Apresentação" dentro da sidebar.
 
 ### Alterando informações de um Card de estudo em uma apresentação específica
-  - Funcionalidade em desenvolvimento 
-### Iniciando apresentação
+  - Ao iniciar a aplicação os cards da primeira apresentação são apresentados. Ao clicar para avançar ou voltar os cards são exibidos de acordo com a respectiva apresentação. Nessa primeira tela o usuário dispõe de um botão de edição dentro do card que ao ser acionado exibe os 2 campos, um para editar a pergunta do Card e o outro para editar a resposta do Card. Alterando as informações e clicando em Salvar pergunta o Card é automaticamente atualizado. 
+  
+### Dando play na apresentação
   - O usuário deve escolher alguma apresentação específica utilizando os botões de navegação no canto direito e após escolher deve clicar em "Apresentar Cards". Clicando em Apresentar Cards os cards da apresentação escolhida serão mostrados na tela. Para visualizar a resposta do Card o usuário deve clicar em "Ver Resposta". Para finalizar a apresentação o usuário deve clicar em Fechar Apresentação.  
 ## Licença
  pasta raiz/licence.txt
