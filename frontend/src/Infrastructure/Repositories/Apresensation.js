@@ -38,7 +38,6 @@ export const repoUpdateApresentation = (apresensationId, dataApresentation) => {
     let response = null;
     api.put(`/cardsstudy/v1/presentations/${apresensationId}`, dataApresentation)
     .then(async res => {
-      console.log(res, 'resposta da api dentro do redux')
       resolve(res.data)    
       return res.data;
     }).catch((error) => {

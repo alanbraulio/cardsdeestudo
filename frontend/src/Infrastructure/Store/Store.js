@@ -16,13 +16,13 @@ export const useAppContext = () => useContext(Store);
 export function reducer(state, action) {
 
   switch (action.type) {
-    case 'CREATE_APRESENSATION':
+    case 'CREATE_APRESENTATION':
       return {
         ...state,
         newApresentation: action.payload.newApresentation,
         allApresentations: action.payload.allApresentations,
     };
-    case 'ALL_APRESENSATIONS':
+    case 'ALL_APRESENTATIONS':
       return {
         ...state,
         allApresentations: action.payload

@@ -5,7 +5,7 @@ import { getAllApresentations, createApresentation, updateApresentation } from '
 export const doGetAllApresentations = async (dispatch) => {
   await getAllApresentations().then(apresentations => {
     return dispatch({
-      type: 'ALL_APRESENSATIONS',
+      type: 'ALL_APRESENTATIONS',
       payload: apresentations
     });
 
