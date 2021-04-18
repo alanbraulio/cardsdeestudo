@@ -45,11 +45,6 @@
   border-radius: 0.5em;
  
 }
-
-.actionsApresensation > * {
-  margin: 0.5em 0.5em;
-}
-
 .preview{
   position:fixed;
   top:0;
@@ -68,10 +63,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.closeApresentation{
-  margin: 0 auto !important;
 }
 
 .showApresentation{

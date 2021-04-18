@@ -185,7 +185,6 @@ function Home() {
             {renderPlayApresentation()}
             {
               <Button
-                className={styles.closeApresentation}
                 onClick={() => setPlayCards(false)}
               >
                 Fechar apresentação
