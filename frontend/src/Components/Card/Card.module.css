@@ -14,7 +14,7 @@
 
 .portraitCard{
   min-width: 15em;
-  height: fit-content;
+  height: 18em;
   padding:1em;
   background-color: #fff;
   display: flex;
