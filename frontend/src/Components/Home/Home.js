@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import { Store } from "../../Infrastructure/Store/Store";
-import { doGetAllApresentations, doUpdateApresensation} from "../../Infrastructure/Actions/Apresentation";
+import {
+  doGetAllApresentations,
+  doUpdateApresensation,
+} from "../../Infrastructure/Actions/Apresentation";
 import styles from "./Home.module.css";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -19,18 +22,16 @@ function Home() {
     doGetAllApresentations(dispatch);
   }, [dispatch]);
 
-
   const handleClickNextApresentation = () => {
     setScreen(screen + 1);
     setShowSideBar(false);
-    setIdApresentation('');
-    
+    setIdApresentation("");
   };
 
   const handleClickPreviousApresentation = () => {
     setScreen(screen - 1);
     setShowSideBar(false);
-    setIdApresentation('');
+    setIdApresentation("");
   };
 
   const handleNewCardApresentation = (id) => {
@@ -44,11 +45,11 @@ function Home() {
     indexDoCardAtualizado = card.index;
     let cards = Object.values(card.apresentacao.descriptor.cards);
     cards.map((newcard, index) => {
-      if(index === indexDoCardAtualizado){
-        newcard = cardatualizado
+      if (index === indexDoCardAtualizado) {
+        newcard = cardatualizado;
       }
-      cardsAtualizados.push(newcard)
-    })
+      return cardsAtualizados.push(newcard);
+    });
     const dataApresentation = {
       name: "Alan Braulio",
       descriptor: {
@@ -67,27 +68,24 @@ function Home() {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const renderCards = (obj) => {
     let apresentacao = obj;
     let cards = Object.values(obj.descriptor.cards);
-    return(
+    return (
       <div className={playCards ? styles.showApresentation : styles.flex}>
         {cards.map((card, index) => {
-          card = {...card, index, apresentacao: apresentacao}
+          card = { ...card, index, apresentacao: apresentacao };
           return (
             <>
-              <Card
-                updateCard={updateCard}
-                card={card}
-                playCards={playCards}
-              />
+              <Card updateCard={updateCard} card={card} playCards={playCards} />
             </>
           );
-        })};
+        })}
+        ;
       </div>
-    )
+    );
   };
   const renderApresentations = () => {
     if (state.allApresentations) {
@@ -108,9 +106,9 @@ function Home() {
   };
 
   const handleCreateNewApresentation = () => {
-    setIdApresentation('');
+    setIdApresentation("");
     setShowSideBar(true);
-  }
+  };
   const handleClickPlayApresentations = (id) => {
     setPlayCards(true);
     setIdApresentation(id);
@@ -129,7 +127,8 @@ function Home() {
   };
 
   const checkDisabledNextButton = () => {
-    if (state.allApresentations.length === screen + 1 ? true : false) return true;
+    if (state.allApresentations.length === screen + 1 ? true : false)
+      return true;
     else return;
   };
   const checkDisabledPreviouButton = () => {
@@ -140,7 +139,9 @@ function Home() {
   const renderActionButtons = (id) => {
     return (
       <div className={styles.actions}>
-        <Button onClick={handleCreateNewApresentation}>Criar Apresentação</Button>
+        <Button onClick={handleCreateNewApresentation}>
+          Criar Apresentação
+        </Button>
         <Button onClick={() => handleNewCardApresentation(id)}>
           Criar Card para a apresentação atual
         </Button>
@@ -159,7 +160,10 @@ function Home() {
         >
           Apresentação Anterior
         </Button>
-        <p>Número de apresentações para serem visualizadas: {state.allApresentations.length}</p>
+        <p>
+          Número de apresentações para serem visualizadas:{" "}
+          {state.allApresentations.length}
+        </p>
       </div>
     );
   };

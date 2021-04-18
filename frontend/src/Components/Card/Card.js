@@ -20,8 +20,8 @@ function Card(props) {
     const cardAtualizado = {
       template: template,
       question: question,
-      answer: answer
-    }
+      answer: answer,
+    };
     props.updateCard(cardAtualizado, props.card);
   };
 
@@ -30,7 +30,7 @@ function Card(props) {
   };
   const renderCard = () => {
     return (
-      <div className={showAnswer ?  'rotate' : ""}>
+      <div className={showAnswer ? "rotate" : ""}>
         <div
           className={
             template === 1
@@ -85,7 +85,7 @@ function Card(props) {
             answer
           )}
         </div>
-        </div>
+      </div>
     );
   };
   return renderCard();
