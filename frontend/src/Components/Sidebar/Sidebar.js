@@ -146,7 +146,7 @@ function Sidebar(props) {
           className={template === 3 ? styles.optionSelected : styles.option}
         >
           <div className={styles.figureCircle}></div>
-          <p>Hexagono</p>
+          <p>Círculo</p>
         </div>
       </>
     );

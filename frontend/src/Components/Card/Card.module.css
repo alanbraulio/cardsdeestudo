@@ -14,7 +14,7 @@
 
 .portraitCard{
   min-width: 15em;
-  height: 16em;
+  height: fit-content;
   padding:1em;
   background-color: #fff;
   display: flex;
@@ -27,8 +27,8 @@
 }
 
 .circleCard{
-  width:15em;
-  height: 15em;
+  width:18em;
+  height: 18em;
   border-radius: 100%;
   padding:1em;
   background-color: #fff;
