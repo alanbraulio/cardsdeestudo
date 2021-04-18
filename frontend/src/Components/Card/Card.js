@@ -8,7 +8,7 @@ function Card(props) {
   const [showEditCard, setShowEditCard] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
   const [question, setQuestion] = useState(props.card.question);
-  const [answer] = useState(props.card.answer);
+  const [answer, setAnswer] = useState(props.card.answer);
   const [template] = useState(props.card.template);
 
   const handleShowEditCard = () => {
@@ -17,12 +17,12 @@ function Card(props) {
 
   const handleSalveCard = () => {
     setShowEditCard(false);
-    const objetoAtualizado = {
+    const cardAtualizado = {
       template: template,
       question: question,
       answer: answer
     }
-    props.updateCard(objetoAtualizado, props.card);
+    props.updateCard(cardAtualizado, props.card);
   };
 
   const handleShowAnwser = () => {
@@ -60,6 +60,13 @@ function Card(props) {
                     value={question}
                     name="question"
                     onChange={({ target }) => setQuestion(target.value)}
+                  />
+                  <Input
+                    label="Escreva a nova resposta"
+                    type="text"
+                    value={answer}
+                    name="answer"
+                    onChange={({ target }) => setAnswer(target.value)}
                   />
                   <Button onClick={() => handleSalveCard()}>
                     Salvar Pergunta
