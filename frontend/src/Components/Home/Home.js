@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import { Store } from "../../Infrastructure/Store/Store";
-import { doGetAllApresentations } from "../../Infrastructure/Actions/Apresentation";
+import { doGetAllApresentations, doUpdateApresensation} from "../../Infrastructure/Actions/Apresentation";
 import styles from "./Home.module.css";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -38,17 +38,56 @@ function Home() {
     setShowSideBar(true);
   };
 
-  const renderCards = (obj) => {
-    let cards = Object.values(obj.descriptor.cards);
-    return cards.map((card, index) => {
-      card = {...card, index}
-      return (
-        <Card
-          card={card}
-          playCards={playCards}
-        />
+  const updateCard = async (cardatualizado, card) => {
+    let cardsAtualizados = [];
+    let indexDoCardAtualizado;
+    indexDoCardAtualizado = card.index;
+    let cards = Object.values(card.apresentacao.descriptor.cards);
+    cards.map((newcard, index) => {
+      if(index === indexDoCardAtualizado){
+        newcard = cardatualizado
+      }
+      cardsAtualizados.push(newcard)
+    })
+    const dataApresentation = {
+      name: "Alan Braulio",
+      descriptor: {
+        cards: {
+          ...cardsAtualizados,
+        },
+      },
+    };
+    try {
+      await doUpdateApresensation(
+        dispatch,
+        card.apresentacao.id,
+        dataApresentation
       );
-    });
+      doGetAllApresentations(dispatch);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const renderCards = (obj) => {
+    let apresentacao = obj;
+    let cards = Object.values(obj.descriptor.cards);
+    return(
+      <div className={playCards ? styles.showApresentation : styles.flex}>
+        {cards.map((card, index) => {
+          card = {...card, index, apresentacao: apresentacao}
+          return (
+            <>
+              <Card
+                updateCard={updateCard}
+                card={card}
+                playCards={playCards}
+              />
+            </>
+          );
+        })};
+      </div>
+    )
   };
   const renderApresentations = () => {
     if (state.allApresentations) {

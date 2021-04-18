@@ -52,7 +52,6 @@
 
 .preview{
   position:fixed;
-  z-index:5000;
   top:0;
   left:0;
   bottom:0;
@@ -61,6 +60,7 @@
   display:flex;
   justify-content:center;
   flex-direction: column;
+  z-index: 1000;
 }
 
 .playCard{
@@ -72,6 +72,32 @@
 
 .closeApresentation{
   margin: 0 auto !important;
+}
+
+.showApresentation{
+  display: flex;
+  flex-direction: column;
+  overflow-y:scroll;
+  align-items: center;
+  margin: 0 auto;
+  height: 30em;
+}
+
+.showApresentation::-webkit-scrollbar-track {
+  background-color: #F4F4F4;
+}
+.showApresentation::-webkit-scrollbar {
+  width: 6px;
+  background: #F4F4F4;
+}
+.showApresentation::-webkit-scrollbar-thumb {
+  background: #FFBB11;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media(max-width:767px){

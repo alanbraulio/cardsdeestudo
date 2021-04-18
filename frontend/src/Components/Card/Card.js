@@ -10,6 +10,7 @@ function Card(props) {
   const [question, setQuestion] = useState(props.card.question);
   const [answer] = useState(props.card.answer);
   const [template] = useState(props.card.template);
+  const [teste, setTeste]= useState(0);
 
   const handleShowEditCard = () => {
     setShowEditCard(true);
@@ -17,7 +18,12 @@ function Card(props) {
 
   const handleSalveCard = () => {
     setShowEditCard(false);
-    // props.updateCards(props.card);
+    const objetoAtualizado = {
+      template: template,
+      question: question,
+      answer: answer
+    }
+    props.updateCard(objetoAtualizado, props.card);
   };
 
   const handleShowAnwser = () => {
@@ -35,7 +41,6 @@ function Card(props) {
               : styles.circleCard
           }
         >
-        <div className={showAnswer ? `${styles.flex}` : ''}>
           {!showAnswer ? (
             <>
               <div className={styles.headerCard}>
@@ -71,12 +76,10 @@ function Card(props) {
               )}
             </>
           ) : (
-            ""
+            answer
           )}
-          {showAnswer ? answer : ""}
         </div>
         </div>
-      </div>
     );
   };
   return renderCard();

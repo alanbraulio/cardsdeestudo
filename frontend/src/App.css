@@ -53,21 +53,12 @@ a {
   padding-top: 2em;
   position: relative;
 }
-
-.sectionPopup{
-  background-color: #000;
-  width: 100%;
-  height: fit-content;
-  min-height: 100vh;
-  padding-top: 2em;
-  position: relative;
-}
-
 .container {
   max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
 .title {
