@@ -107,6 +107,10 @@ function Home() {
     }
   };
 
+  const handleCreateNewApresentation = () => {
+    setIdApresentation('');
+    setShowSideBar(true);
+  }
   const handleClickPlayApresentations = (id) => {
     setPlayCards(true);
     setIdApresentation(id);
@@ -136,7 +140,7 @@ function Home() {
   const renderActionButtons = (id) => {
     return (
       <div className={styles.actions}>
-        <Button onClick={() => setShowSideBar(true)}>Criar Apresentação</Button>
+        <Button onClick={handleCreateNewApresentation}>Criar Apresentação</Button>
         <Button onClick={() => handleNewCardApresentation(id)}>
           Criar Card para a apresentação atual
         </Button>
