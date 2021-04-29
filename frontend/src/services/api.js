@@ -2,7 +2,7 @@ import axios from "axios";
 
  
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: 'https://606eeab20c054f0017657edc.mockapi.io',
   https:true
 });
 
